@@ -1,0 +1,46 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="50%" stop-color="#d946ef" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="55" fill="#0f0f0f" stroke="url(#logoGradient)" stroke-width="2"/>
+  
+  <!-- Letter F -->
+  <path
+    d="M 30 40 L 30 80 M 30 40 L 50 40 M 30 58 L 46 58"
+    stroke="url(#logoGradient)"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#glow)"
+  />
+  
+  <!-- Letter A -->
+  <path
+    d="M 60 80 L 72 40 L 84 80 M 64 64 L 80 64"
+    stroke="url(#logoGradient)"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#glow)"
+  />
+  
+  <!-- Decorative nodes -->
+  <circle cx="30" cy="40" r="3" fill="url(#logoGradient)" filter="url(#glow)" />
+  <circle cx="50" cy="40" r="3" fill="url(#logoGradient)" filter="url(#glow)" />
+  <circle cx="72" cy="40" r="3" fill="url(#logoGradient)" filter="url(#glow)" />
+</svg>

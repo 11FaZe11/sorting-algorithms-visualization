@@ -1,0 +1,439 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to use CSS custom properties that can be dynamically changed */
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.12 0.02 260);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.25 280);
+  --primary-foreground: oklch(0.95 0 0);
+  --secondary: oklch(0.55 0.28 20);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.3 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.6 0.25 180);
+  --accent-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.65 0.25 20);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.2 0.01 260);
+  --input: oklch(0.12 0.02 260);
+  --ring: oklch(0.65 0.25 280);
+  --chart-1: oklch(0.65 0.25 280);
+  --chart-2: oklch(0.6 0.25 180);
+  --chart-3: oklch(0.65 0.25 140);
+  --chart-4: oklch(0.55 0.28 20);
+  --chart-5: oklch(0.6 0.25 50);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.25 280);
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(0.6 0.25 180);
+  --sidebar-accent-foreground: oklch(0.08 0 0);
+  --sidebar-border: oklch(0.2 0.01 260);
+  --sidebar-ring: oklch(0.65 0.25 280);
+}
+
+.dark {
+  /* Dark mode neon theme */
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.12 0.02 260);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.25 280);
+  --primary-foreground: oklch(0.95 0 0);
+  --secondary: oklch(0.55 0.28 20);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.3 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.6 0.25 180);
+  --accent-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.65 0.25 20);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.2 0.01 260);
+  --input: oklch(0.12 0.02 260);
+  --ring: oklch(0.65 0.25 280);
+  --chart-1: oklch(0.65 0.25 280);
+  --chart-2: oklch(0.6 0.25 180);
+  --chart-3: oklch(0.65 0.25 140);
+  --chart-4: oklch(0.55 0.28 20);
+  --chart-5: oklch(0.6 0.25 50);
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.25 280);
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(0.6 0.25 180);
+  --sidebar-accent-foreground: oklch(0.08 0 0);
+  --sidebar-border: oklch(0.2 0.01 260);
+  --sidebar-ring: oklch(0.65 0.25 280);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Ensure smooth color transitions when theme changes */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Added custom animations and neon glow effects */
+@layer components {
+  /* Enhanced text wrapping utilities for better mobile display */
+  .text-wrap-balance {
+    text-wrap: balance;
+  }
+
+  .text-wrap-pretty {
+    text-wrap: pretty;
+  }
+
+  .break-word {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Improved responsive container utilities */
+  .responsive-card {
+    @apply min-w-0 max-w-full overflow-hidden;
+  }
+
+  .responsive-text {
+    @apply break-words overflow-hidden text-ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+  }
+
+  /* Enhanced touch manipulation for better mobile UX */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Dynamic neon border that adapts to theme */
+  .neon-border {
+    @apply border-2 transition-all duration-300;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px color-mix(in oklch, var(--primary) 30%, transparent), inset 0 0 10px
+      color-mix(in oklch, var(--primary) 10%, transparent);
+  }
+
+  .neon-border:hover {
+    box-shadow: 0 0 20px color-mix(in oklch, var(--primary) 50%, transparent), inset 0 0 15px
+      color-mix(in oklch, var(--primary) 15%, transparent);
+  }
+
+  .neon-border:active {
+    box-shadow: 0 0 15px color-mix(in oklch, var(--primary) 40%, transparent), inset 0 0 12px
+      color-mix(in oklch, var(--primary) 12%, transparent);
+  }
+
+  /* Dynamic neon glow effects that adapt to theme colors */
+  .neon-glow-primary {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px color-mix(in oklch, var(--primary) 50%, transparent);
+  }
+
+  .neon-glow-primary:hover {
+    box-shadow: 0 0 30px color-mix(in oklch, var(--primary) 70%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .neon-glow-primary:active {
+    box-shadow: 0 0 25px color-mix(in oklch, var(--primary) 60%, transparent);
+    transform: translateY(0px);
+  }
+
+  .neon-glow-accent {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px color-mix(in oklch, var(--accent) 50%, transparent);
+  }
+
+  .neon-glow-accent:hover {
+    box-shadow: 0 0 30px color-mix(in oklch, var(--accent) 70%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .neon-glow-accent:active {
+    box-shadow: 0 0 25px color-mix(in oklch, var(--accent) 60%, transparent);
+    transform: translateY(0px);
+  }
+
+  .neon-glow-success {
+    box-shadow: 0 0 20px rgba(153, 255, 153, 0.5);
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  /* Slide in animation */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .slide-in-delay-1 {
+    animation: slideIn 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .slide-in-delay-2 {
+    animation: slideIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .slide-in-delay-3 {
+    animation: slideIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  /* Slide in from left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.7s ease-out forwards;
+  }
+
+  /* Slide in from right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.7s ease-out forwards;
+  }
+
+  /* Pulse glow animation */
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(167, 102, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(167, 102, 255, 0.8);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Rotating gradient background */
+  @keyframes rotateGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background: linear-gradient(
+      45deg,
+      rgba(167, 102, 255, 0.1),
+      rgba(153, 204, 255, 0.1),
+      rgba(255, 153, 102, 0.1),
+      rgba(153, 255, 153, 0.1)
+    );
+    background-size: 400% 400%;
+    animation: rotateGradient 15s ease infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Scale on hover with glow */
+  .scale-hover {
+    transition: all 0.3s ease;
+  }
+
+  .scale-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(167, 102, 255, 0.4);
+  }
+
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(167, 102, 255, 0.3) 50%, transparent 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  /* Mobile-optimized animations with reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .slide-in,
+    .slide-in-delay-1,
+    .slide-in-delay-2,
+    .slide-in-delay-3,
+    .float-animation,
+    .shimmer {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Improve tap targets on mobile */
+    button,
+    a,
+    [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Better text sizing on mobile */
+    .responsive-text {
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+
+    /* Optimize animations for mobile performance */
+    .float-animation {
+      animation-duration: 4s;
+    }
+  }
+
+  /* Extra small screens optimization */
+  @media (max-width: 480px) {
+    .responsive-card {
+      padding: 0.75rem;
+    }
+
+    /* Further reduce text size for very small screens */
+    .responsive-text {
+      font-size: clamp(0.625rem, 2vw, 0.75rem);
+      -webkit-line-clamp: 2;
+    }
+  }
+}
